@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Fondo principal: POV desde la ciudad Vaporwave / Cyberpunk */
+.stApp {
+    /* Combinando Scanlines VHS + Filtro Oscuro Neón + Imagen Cyberpunk */
+    background:
+        repeating-linear-gradient(rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.15) 3px, rgba(0, 0, 0, 0) 6px),
+        linear-gradient(rgba(10, 0, 25, 0.75), rgba(40, 0, 50, 0.65)),
+        url('https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?q=80&w=2000') center/cover fixed;
+    color: #00ffff;
+    font-family: 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Capa de Lluvia 1: Gotas gruesas en el cristal (Lentas y sutiles) */
+.stApp::before {
+    content: " ";
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    pointer-events: none;
+    z-index: 0;
+    /* Inyectando un SVG puro en Base64 para evitar errores de red y crear verdaderas gotas de agua */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Crect width='3' height='25' rx='1.5' x='50' y='30' fill='rgba(0,255,255,0.4)'/%3E%3Crect width='2' height='15' rx='1' x='150' y='100' fill='rgba(255,0,255,0.4)'/%3E%3Crect width='4' height='35' rx='2' x='200' y='160' fill='rgba(255,255,255,0.2)'/%3E%3Crect width='1' height='20' rx='0.5' x='90' y='210' fill='rgba(255,255,255,0.5)'/%3E%3C/svg%3E");
+    background-size: 150px 150px;
+    filter: blur(1px);
+    animation: lluvia-relajante 12s linear infinite;
+    /* Extremadamente lento para evitar fatiga */
+    opacity: 0.8;
+}
+
+/* Capa de Lluvia 2: Gotas más finas para profundidad (Efecto Parallax 3D) */
+.stApp::after {
+    content: " ";
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    pointer-events: none;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Crect width='1.5' height='18' rx='0.7' x='30' y='40' fill='rgba(0,255,255,0.3)'/%3E%3Crect width='1' height='12' rx='0.5' x='100' y='90' fill='rgba(255,0,255,0.3)'/%3E%3C/svg%3E");
+    background-size: 100px 100px;
+    animation: lluvia-relajante 8s linear infinite;
+    opacity: 0.6;
+}
+
+/* Movimiento zen de las gotas escurriendo lentamente */
+@keyframes lluvia-relajante {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: 10px 1000px;
+    }
+}
+
+/* Ocultar elementos feos nativos de Streamlit */
+header[data-testid="stHeader"] {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+div[data-testid="stBottom"]>div {
+    background-color: transparent !important;
+}
+
+/* Títulos con neón rudo */
+h1,
+h2,
+h3 {
+    font-family: 'VT323', monospace !important;
+    color: #ff00ff !important;
+    text-shadow: 2px 2px 0px rgba(0, 255, 255, 0.7), -1px -1px 8px rgba(255, 0, 255, 0.9);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+}
+
+/* Glassmorphism Polarizado para el Chat */
+.stChatMessage {
+    background-color: rgba(5, 0, 15, 0.6) !important;
+    backdrop-filter: blur(8px) saturate(130%);
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    border-left: 3px solid #00ffff;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(0, 255, 255, 0.05);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
+    padding: 1.5rem;
+}
+
+/* Consola de Commando inferior */
+.stChatInputContainer textarea {
+    background-color: rgba(0, 0, 10, 0.7) !important;
+    backdrop-filter: blur(15px);
+    color: #00ffff !important;
+    border: 1px solid rgba(0, 255, 255, 0.6) !important;
+    border-radius: 4px;
+    font-family: 'VT323', monospace !important;
+    font-size: 1.5rem !important;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stChatInputContainer textarea:focus {
+    border-color: #ff00ff !important;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+}
+
+.stChatInputContainer button {
+    color: #ff00ff !important;
+}
+
+/* Textos con ligera aberración */
+p {
+    color: #d1d1e0;
+    line-height: 1.6;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
+    font-size: 1.05rem;
+}
+
+/* Enlaces Cyber */
+a {
+    color: #00ffff !important;
+    text-decoration: none;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: #ff00ff !important;
+    text-shadow: 0 0 12px rgba(255, 0, 255, 1);
+}
