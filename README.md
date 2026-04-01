@@ -2,7 +2,7 @@
 
 **NexusDev AI RAG** es un agente conversacional basado en la arquitectura de grafos (**LangGraph**) y Retrieval-Augmented Generation (**RAG**). Está diseñado para asistir a _Vibecoders_, arquitectos de software y emprendedores tecnológicos mediante la unificación de conocimientos internos, búsquedas en internet y razonamiento lógico avanzado.
 
-El proyecto está orquestado con **Llama-3.3-70B-Versatile** a través de la API de **Groq** para un rendimiento y latencia ultrarrápidos, y una interfaz visual construida en **Streamlit**.
+El proyecto está orquestado con **Llama-3.3-70B-Versatile** a través de la API de **Groq** para un rendimiento y latencia ultrarrápidos, y una interfaz visual construida en **Streamlit** https://nexusdev-ai-rag-agent.streamlit.app/.
 
 ## ✨ Características Principales
 
