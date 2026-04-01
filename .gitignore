@@ -10,8 +10,6 @@ __pycache__/
 
 # Archivos de Streamlit cruzados/locales
 .streamlit/
-# Ocultar la carpeta si por error quedo rastro de .agents
-.agents/
 
 # Logs del sistema
 *.log
